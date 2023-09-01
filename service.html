@@ -22,8 +22,8 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-text">
-                <h1>تواصل مع مثلث الفرسان</h1>
-                <p>  سهوله التواصل معنا | افضل خدمع عملاء  </p>
+                <h1>خدمات مثلث الفرسان</h1>
+                <p>افضل مؤسسه لخدمات النقل</p>
               <button class="btn btn-primary" > 
                 <a href="tel:+966599410003" >اتصل الأن</a>
               </button>
@@ -58,10 +58,10 @@
                     <a class="nav-link " aria-current="page" href="./index.html">الصفحه الرئيسيه</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="./service.html">خدماتنا</a>
+                    <a class="nav-link active" href="./service.html">خدماتنا</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="./contact.html">معلومات الاتصال </a>
+                    <a class="nav-link" href="./contact.html">معلومات الاتصال </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./whoUs.html"> من نحن </a>
@@ -89,7 +89,7 @@
         </nav>
         <div class="intro">
             <h1>
-                تواصل معنا
+                خدماتنا
             </h1>
             <p>
                 مثلث الفرسان
@@ -100,108 +100,36 @@
         </div>
     </div>
 
-<!--- contact us-->
-    <div class="contact-us">
-        <div class="contact-place">
-        <h1>فروعنا</h1>
-        <p>
-            الرياض - المملكه العربيه السعوديه
-            <i class="fa-solid fa-location-dot"></i>
-        </p>
-        <p>
-            جده - المملكه العربيه السعوديه
-            <i class="fa-solid fa-location-dot"></i>
-        </p>
-        <p>
-            الطائف - المملكه العربيه السعوديه
-            <i class="fa-solid fa-location-dot"></i>
-        </p>
-        <p>
-            الدمام - المملكه العربيه السعوديه
-            <i class="fa-solid fa-location-dot"></i>
-        </p>
+ <!-- service-icon -->
+    <div class="service">
+            <h1>خدماتنا</h1>
+            <div class="service-items">
+                <div class="service-item">
+                    <i class="fa-solid fa-truck"></i>
+                    <P>اليه النقل </P>
+                </div>
+                <div class="service-item">
+                    <i class="fa-solid fa-gears"></i>
+                    <P>عمليه الفك  </P>
+                </div>
+                <div class="service-item">
+                    <i class="fa-solid fa-box"></i>
+                    <P>عمليه التغليف</P>
+                </div>
+                <div class="service-item">
+                    <i class="fa-solid fa-chair"></i>
+                    <P> عمليه تنزيل الأثاث</P>
+                </div>
+                <div class="service-item">
+                    <i class="fa-solid fa-business-time"></i>
+                    <P>تخزين الأثاث</P>
+                </div>
+                <div class="service-item">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <P>عمليه التركيب</P>
+                </div>
+            </div>
         </div>
-        <div class="contact-email">
-        <h1>البريد </h1>
-        <p>
-            <i class="fa-solid fa-envelope"></i>
-            moslselforsan@gmail.com 
-        </p>
-        </div>
-        <div class="contact-phone">
-        <h1>ارقام التواصل</h1>
-        <p>
-            <i class="fa-solid fa-phone"></i>
-            +966599420001
-        </p>
-        <p>
-            <i class="fa-solid fa-phone"></i>
-            +966556777614
-        </p>
-        <p>
-            <i class="fa-solid fa-phone"></i>
-            +966599410003
-        </p>
-        <p>
-            <i class="fa-solid fa-phone"></i>
-            +966599420003
-        </p>
-        </div>
-    </div>
-
-    <!-- comment  -->
-    <div class="form">
-    <h1>تواصل معنا </h1>
-    <input type="text" id="name" class="name " required placeholder="الاسم">
-    <input type="text" id="email" class="email" required placeholder="البريد الالكتروني">
-    <div class="message">
-    <input type="text" id="message1" class="message1" required placeholder="المنطقه">
-    <input type="number" id="message2" class="message2" required placeholder="عدد الغرف">
-    </div>
-    <textarea id="message" placeholder="تعليقك"></textarea>
-    <button type="button" class="btn btn-primary"  id="emailSend">ارسال</button>
-    </div>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const emailSend = document.getElementById('emailSend');
-    emailSend.addEventListener('click', function () {
-    // Get input values
-    let email = document.getElementById('email').value;
-    let name = document.getElementById('name').value;
-    let message_content = document.getElementById('message').value;
-
-    // Ensure fields are not empty
-    if (!email || !name || !message_content) {
-    alert('قم بملئ الخانات المطلوبه');
-    return;
-    }
-
-    // Use the Email.send() function
-    Email.send({
-    Host: "smtp.elasticemail.com",
-    Username: "moslselforsan@gmail.com",
-    Password: "CB15DE6C9A0AA1E54FDED857C2983C1F75A3",
-    To: 'moslselforsan@gmail.com',  
-    From: 'moslselforsan@gmail.com',
-    Subject: `Message from ${name}`,
-    Body: message_content,
-    }).then(function (message) {
-    alert('تم الارسال بالنجاح ');
-    }).catch(function (error) {
-    console.error('Email sending error:', error);
-    alert('An error occurred while sending the email.');
-    });
-    });
-    });
-    </script>
-
-    
-    <div class="container-map">
-        <h1>موقعنا الجغرافي</h1>
-        <div class="map">    
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14290.821078772533!2d50.07560761079651!3d26.432986124577962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e361d32276b3403%3A0xefd901ec7a5e5676!2sDammam%20Saudi%20Arabia!5e0!3m2!1sen!2seg!4v1693516905393!5m2!1sen!2seg" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>          </div>
-      </div>   
-
 
 
 

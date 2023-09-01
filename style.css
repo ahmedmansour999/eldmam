@@ -8,7 +8,76 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: 'El Messiri', sans-serif;
-    height: 10000px;
+}
+
+/* Add styles for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color:var(--main-color);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    color: white;
+}
+.modal-text{
+    text-align: center;
+}
+.modal-text a{
+    color: white;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.whatsapp-container{
+    position: fixed;
+    bottom: 20px; /* Adjust this value as needed to control the vertical placement */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.whatsapp-container .phone{
+    background-color: #020b38;
+    padding: 10px;
+    font-size: 2rem;
+    margin: 0 10px;
+    border-radius: 12px;
+    z-index: 99;
+}
+.whatsapp-container .whatsapp{
+    background-color: #08d808;
+    padding: 10px;
+    font-size: 2rem;
+    margin: 0 10px;
+    border-radius: 12px;
+    z-index: 99;
+}
+.whatsapp i{
+    color: white;
+    
 }
 
 
@@ -43,7 +112,15 @@ body{
 }
 .nav-container nav li{
     padding: 0px 10px;
+    transition: border 2s ease;
 }
+.active{
+    border-bottom: 1px solid rebeccapurple;  
+}
+.nav-container nav li:hover{
+    border-bottom: 1px solid white;
+}
+
 .dropdown .dropdown-menu{
     background-color: #1b1e20;
 }
@@ -90,7 +167,6 @@ nav .logo-png img{
     grid-template-columns:  repeat(2 , 1fr);
     padding: 30px;
     align-items: center;
-    overflow: hidden;
     border-radius: 20px;
 }
 .about-container img{
@@ -123,7 +199,7 @@ nav .logo-png img{
 
 
 .container2{
-    height: 95vh ;
+    height: 120vh ;
 }
 
 /* container 3  */
@@ -255,6 +331,229 @@ nav .logo-png img{
     color: blue !important;
 }
 
+/* container 6 */
+
+.container6{
+    margin: 20px 43px;
+    background: #16163F;
+    display: flex;
+    flex-direction: row-reverse;
+    color: white;
+    justify-content: space-between;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: none;
+    transition: all 2s ease ;
+    animation: motionX 2s;
+}
+.container6 .element{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 2.5rem;
+}
+.container6 button{
+    border-bottom-left-radius: 30px;
+    border: none;
+    outline: none;
+}
+
+/* container7 */
+
+.container7{
+    padding: 100px 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.container7 .steps{
+    display: grid;
+    grid-template-columns: repeat(4 ,1fr);
+    justify-items: center;
+    justify-content: space-evenly;
+    align-items: start;
+    gap: 10px;
+}
+.container7 h1{
+    padding: 1rem 0 4rem;
+}
+.steps .card-item{
+height: 345px;
+justify-content: space-around !important;
+animation: scale 3s ;
+}
+.steps .card-item p{
+    background-color: #16163f;
+    color: white;
+    padding: 15px;
+}
+.steps .card-item i{
+    font-size: 3rem;
+    padding: 2rem;
+    color: #3F51B5;
+}
+
+/* container map */
+.container-map{
+    color: white;
+    text-align: center;
+}
+.container-map h1{
+    padding-bottom: 15px;
+}
+
+/* more-container */
+.more-container {
+    padding: 100px 50px;
+}
+
+.more-container .more1 {
+    position: relative; /* Add position: relative */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: #141618;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    min-height: 60vh;
+}
+.more1 img{
+    filter: brightness(.5) !important;
+}
+
+/* Add a pseudo-element for the background overlay */
+.more-container .more1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the color and opacity */
+    opacity: 0; /* Initial opacity */
+    transition: opacity 0.5s; /* Add transition */
+    pointer-events: none; /* Allow interactions with elements beneath */
+}
+
+.more-container .more1:hover .more-details {
+    z-index: 1; /* Bring .more-details to the top */
+    display: flex ;
+}
+
+/* Apply the transform animation to paragraphs within .more-details when hovering over .more1 */
+.more-container .more1:hover .more-details p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.more1 h2 {
+    background-color: #4a137d;
+    width: 100%;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.more-container .more1 .more-details {
+    display: none;
+    align-items: center;
+    flex-direction: row-reverse;
+    position: relative; /* Add position: relative */
+    z-index: 2; /* Initially behind the overlay */
+    background-color: #212529;
+    animation: trans-more 2s;
+    transition: all 2s ease;
+}
+
+.more-details2 {
+    padding: 20px;
+}
+
+.more-container .more1 .more-details p {
+    text-align: center;
+    font-size: 1.5rem;
+    animation: trans-more 2s;
+    transition: all 2s ease;
+    width: 100%;
+    height: 100%;
+    transform: translateY(39rem);
+    opacity: 0;
+}
+
+.more-container .more1 .more-details img {
+    overflow: hidden;
+    width: 100%;
+}
+
+@keyframes trans-more {
+    0% {
+        transform: translateY(39rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+}
+
+.more-left {
+    flex-direction: row !important;
+}
+.more-img1{
+    background-image: url(./img/carry1.jpg) !important;
+}
+.more-img3{
+    background-image: url(./img/carry2.jpg) !important;
+}
+.more-img2{
+    background-image: url(./img/carry3.jpg) !important;
+}
+.more-img4{
+    background-image: url(./img/carry4.webp) !important;
+}
+.more-img5{
+    background-image: url(./img/carry6.webp) !important;
+}
+
+
+/* footer */
+footer {
+    padding: 50px;
+    background: #16163f;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    align-items: start;
+    text-align: center;
+}
+footer .information .info-item{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    animation: motionX 3s ;
+    justify-content: flex-start;
+}
+
+footer .information .info-item i {
+text-align: center;
+padding: 2px 10px;
+
+}
+
+footer .links{
+    display: flex;
+    flex-direction: column;
+}
+
+footer .details-footer a{
+    padding: 5px 10px;
+}
+
 
 
 /* media */
@@ -280,6 +579,11 @@ nav .logo-png img{
     .about-container p{
         display: none;
     }
+
+    /* container2 */
+    .container2{
+        height: 95vh;
+    }
     /* container3 */
     .container3{
         flex-direction: column;
@@ -301,6 +605,34 @@ nav .logo-png img{
     /* container 5 */
     .container5{
         grid-template-columns: auto;
+    }
+    /* container 6 */
+    .container6{
+        flex-direction: column;
+    }
+    .container6 button{
+        padding: 25px;
+    }
+
+    /* container7 */
+    .container7 .steps{
+        grid-template-columns: 1fr;
+    }
+    .container7 h1{
+        text-align: center;
+    }
+
+    /* more information */
+    .more-container .more1 .more-details p {
+        font-size: 1rem;
+    }
+    
+    /* footer */
+    footer{
+        grid-template-columns: 1fr;
+    }
+    footer .links{
+        margin: 35px 0px;
     }
 }
 
@@ -328,5 +660,120 @@ nav .logo-png img{
     }
     100%{
         transform: translateX(0%);
+    }
+}
+
+
+/* service html */
+
+.service{
+    padding: 70px 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.service .service-items{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 50px 0;
+    font-size: 2rem;   
+    gap: 25px;
+    animation: opacity 3s , motionX 3s;
+    color: white;
+
+}
+.service .service-items .service-item i{
+    font-size: 4rem;
+    color: lawngreen;
+}
+
+@media (max-width : 786px) {
+    .service .service-items{
+        grid-template-columns: auto auto ;
+    }
+}
+
+/* contact html */
+/* contact us */
+
+.contact-us{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 100px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+}
+
+.form{
+        display: flex;
+    flex-direction: column;
+    padding: 20px 100px;
+    text-align: center;
+}
+.form input , .form textarea , .form button{
+    margin: 5px;
+    outline: none;
+}
+.form input , .form textarea {
+        border: none;
+    border-radius: 7px;
+    padding: 4px 15px;
+}
+.form .message{
+        width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.form .message input{
+    width: 100%;
+}
+
+
+
+
+@media (max-width:786px) {
+    .contact-us{
+        padding: 100px 20px 0;
+        text-align: center;
+        flex-direction: column;
+    }
+    .form{
+        padding: 20px 0px;
+    }
+}
+
+/* media html */
+
+/* media */
+
+
+.media-img{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+}
+.media .media-item{
+    margin: 15px;
+    box-shadow: 1px 1px 5px 0px #020b38 ;
+    overflow: hidden;
+}
+.media-img img{
+    width: 100%;
+    height: 100%;
+    transition: all 4s ease;
+}
+
+.media .media-item:hover img{
+    scale: 1.5;
+}
+.media .media-item{
+    border-radius: 20px ;
+}
+
+@media (max-width : 768px) {
+    .media-img{
+        grid-template-columns: repeat(2 , 1fr);
     }
 }
