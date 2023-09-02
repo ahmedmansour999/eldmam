@@ -84,7 +84,7 @@ body{
 
 /* nav bar container */
 .nav-container{
-    background-image: url(./img/intro.avif);
+    background-image: url(./img/horse.jpg);
     background-size: cover ;
     background-repeat : no-repeat;
     background-position: center top;
